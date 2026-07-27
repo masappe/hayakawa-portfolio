@@ -936,11 +936,14 @@ section {
   font-weight: 700;
 }
 
-.fmap-basic { background: #d97706; }
-.fmap-cafe  { background: #92400e; }
-.fmap-salon { background: #166534; }
-.fmap-corp  { background: #1e3a8a; }
-.fmap-event { background: #6d28d9; }
+.fmap-basic    { background: #d97706; }
+.fmap-cafe     { background: #92400e; }
+.fmap-salon    { background: #166534; }
+.fmap-corp     { background: #1e3a8a; }
+.fmap-event    { background: #6d28d9; }
+.fmap-piano    { background: #6b4fa0; }
+.fmap-seitai   { background: #2e7d5e; }
+.fmap-koumuten { background: #1a3a5c; }
 
 /* グループ行 */
 .fmap-group-row td {
