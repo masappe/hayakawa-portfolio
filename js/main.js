@@ -33,6 +33,23 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+// ===== 機能比較表アコーディオン =====
+document.querySelectorAll('.fmap-table tbody tr[data-desc]').forEach(tr => {
+  const td = tr.querySelector('td.fmap-clickable');
+  if (!td) return;
+  const desc = tr.getAttribute('data-desc');
+  const detailRow = document.createElement('tr');
+  detailRow.className = 'fmap-detail-row';
+  detailRow.innerHTML = `<td colspan="6"><div class="fmap-detail-inner"><div class="fmap-detail-text">${desc}</div></div></td>`;
+  tr.after(detailRow);
+  td.addEventListener('click', () => {
+    const isOpen = detailRow.classList.contains('open');
+    detailRow.classList.toggle('open', !isOpen);
+    td.querySelector('.fmap-chevron').style.transform = isOpen ? '' : 'rotate(180deg)';
+    td.querySelector('.fmap-chevron').style.opacity = isOpen ? '0.5' : '0.8';
+  });
+});
+
 // ===== フォーム送信フィードバック =====
 const form = document.querySelector('.contact-form');
 if (form) {
